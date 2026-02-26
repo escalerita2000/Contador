@@ -1,0 +1,61 @@
+/* =============================================
+   DIVISAS APP — GLOBAL STYLES
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0a0a08;
+  --surface: #111110;
+  --surface2: #1a1a17;
+  --surface3: #202020;
+  --border: #2a2a25;
+  --border-hover: #3a3a33;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --gold-glow: rgba(201, 168, 76, 0.06);
+  --text: #e8e4d8;
+  --text-dim: #6a6658;
+  --text-mid: #a8a294;
+  --accent: #4caf85;
+  --accent-dim: rgba(76, 175, 133, 0.12);
+  --red: #c94c4c;
+  --red-dim: rgba(201, 76, 76, 0.15);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --radius: 2px;
+  --transition: 0.2s ease;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar global */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+
+/* Selección de texto */
+::selection {
+  background: var(--gold-dim);
+  color: var(--gold-light);
+}

@@ -1,0 +1,288 @@
+/* Convertidor.module.css */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ---- formulario ---- */
+.form {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.inputGroup {
+  flex: 1;
+  min-width: 260px;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.inputWrapper {
+  display: flex;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: border-color var(--transition);
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--gold);
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.9rem 1.1rem;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--text-dim);
+}
+
+/* quitar flechas del input number */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.input[type="number"] { -moz-appearance : textfield; }
+
+.select {
+  background: var(--surface2);
+  border: none;
+  border-left: 1px solid var(--border);
+  outline: none;
+  padding: 0 1rem 0 0.8rem;
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  min-width: 100px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23c9a84c' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 2rem;
+  transition: background-color var(--transition);
+}
+
+.select:focus {
+  background-color: var(--surface3);
+}
+
+.botones {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.btnConvertir {
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+  padding: 0.9rem 1.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: background var(--transition), transform 0.1s;
+  white-space: nowrap;
+}
+
+.btnConvertir:hover:not(:disabled) {
+  background: var(--gold-light);
+}
+
+.btnConvertir:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btnConvertir:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arrow {
+  font-size: 1rem;
+  transition: transform var(--transition);
+}
+
+.btnConvertir:hover:not(:disabled) .arrow {
+  transform: translateX(4px);
+}
+
+.btnLimpiar {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 0.9rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.btnLimpiar:hover {
+  border-color: var(--border-hover);
+  color: var(--text-mid);
+}
+
+/* ---- resultados ---- */
+.resultados {
+  animation: fadeDown 0.35s ease;
+}
+
+.resultadosHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.subtitulo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.countLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+  margin-left: auto;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 1.5rem;
+  transition: border-color var(--transition), background var(--transition);
+  animation: fadeRight 0.3s ease both;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface2);
+}
+
+.cardPais {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.cardMoneda {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  min-width: 40px;
+}
+
+.cardValor {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text);
+  min-width: 120px;
+  text-align: right;
+}
+
+.cardTasa {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-align: right;
+  min-width: 160px;
+}
+
+.noResultados {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  padding: 2rem 0;
+}
+
+/* ---- animaciones ---- */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ---- responsive ---- */
+@media (max-width: 768px) {
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .botones {
+    flex-direction: column;
+  }
+
+  .btnConvertir,
+  .btnLimpiar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .cardValor {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  .cardTasa {
+    text-align: left;
+    grid-column: 1 / -1;
+  }
+}

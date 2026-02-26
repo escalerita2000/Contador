@@ -1,0 +1,82 @@
+/* Estados.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.texto {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  letter-spacing: 0.1em;
+}
+
+.subtexto {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+/* error */
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  gap: 1rem;
+  text-align: center;
+}
+
+.errorIcon {
+  font-size: 2rem;
+  color: var(--red);
+}
+
+.errorTitulo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.errorMensaje {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  max-width: 400px;
+}
+
+.retryBtn {
+  background: transparent;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 0.7rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  margin-top: 0.5rem;
+}
+
+.retryBtn:hover {
+  background: var(--red-dim);
+}

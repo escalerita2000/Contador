@@ -1,0 +1,180 @@
+/* TablaCruzada.module.css */
+
+.section {
+  animation: fadeIn 0.4s ease;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.titulo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.sub {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+/* Contenedor con scroll horizontal */
+.wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.wrapper::-webkit-scrollbar { height: 5px; }
+.wrapper::-webkit-scrollbar-track { background: var(--surface2); }
+.wrapper::-webkit-scrollbar-thumb { background: var(--border-hover); }
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+/* ---- encabezados ---- */
+.th {
+  background: var(--surface2);
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-align: center;
+  border-bottom: 2px solid var(--gold-dim);
+  border-right: 1px solid var(--border);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background var(--transition);
+}
+
+.thCorner {
+  text-align: center;
+  min-width: 160px;
+  position: sticky;
+  left: 0;
+  z-index: 20;
+  color: var(--text-dim);
+  font-size: 0.7rem;
+}
+
+.thHighlighted {
+  background: rgba(201, 168, 76, 0.1) !important;
+  color: var(--gold-light);
+}
+
+/* ---- filas ---- */
+.tr {
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+/* ---- celda nombre (primera columna) ---- */
+.tdNombre {
+  padding: 0.6rem 1rem;
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 5;
+  border-right: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+.tdNombreHighlighted {
+  background: rgba(201, 168, 76, 0.06) !important;
+}
+
+.monedaTag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin-right: 0.5rem;
+}
+
+.nombreTag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* ---- celdas de datos ---- */
+.td {
+  padding: 0.55rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-mid);
+  text-align: right;
+  border-right: 1px solid var(--border);
+  white-space: nowrap;
+  cursor: default;
+  transition: background var(--transition), color var(--transition);
+}
+
+.tdDiagonal {
+  padding: 0.55rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: center;
+  background: var(--surface2);
+  border-right: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+/* Resaltado al hover */
+.highlighted {
+  background: rgba(201, 168, 76, 0.04);
+}
+
+/* Celda activa (hover directo) */
+.active {
+  background: rgba(201, 168, 76, 0.1) !important;
+  color: var(--text) !important;
+}
+
+/* Colores segun magnitud del valor */
+.valorGrande {
+  color: var(--accent);
+}
+
+.valorMedio {
+  color: var(--text-mid);
+}
+
+.valorChico {
+  color: var(--text-dim);
+  font-size: 0.65rem;
+}
+
+.ayuda {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
